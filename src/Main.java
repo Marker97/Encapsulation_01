@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Main {
@@ -15,14 +16,19 @@ public class Main {
 
 
         System.out.println("Insert list of names separated by a comma: ");
-        String residentNames = dataInput.nextLine();
-        if(!residentNames.contains(",")){
+        String residents= dataInput.nextLine();
+        String [] residentArray = residents.split(",");
+
+
+        if(!residents.contains(",")){
             System.out.println("ERROR. Resident names must be separated by a comma.");
         }
 
-        System.out.println("House floors number are: " + floorsNumber +
-                "\n" + "House's address: " + address +
-                "\n" + "Residents: " + residentNames);
+        House myHouse = new House(floorsNumber,address, residentArray);
+
+        System.out.println("House floors number are: " + myHouse.getFloorsNumber()+
+                "\n" + "House's address: " + myHouse.getAddress() +
+                "\n" + "House's residents: " + String.join("," , myHouse.getResidentNames()));
 
 
     }

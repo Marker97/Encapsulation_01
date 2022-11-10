@@ -11,7 +11,7 @@ public class House {
     }
 
     public int getFloorsNumber () {
-           return floorsNumber;
+        return floorsNumber;
     }
     public void setFloorsNumber(int floorsNumber){
         this.floorsNumber = floorsNumber;
